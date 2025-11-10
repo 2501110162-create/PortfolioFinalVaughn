@@ -1,0 +1,223 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 100;
+    border-bottom: 1px solid #00ffae;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00ffae;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 60px; /* Account for fixed nav */
+}
+
+.hero {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.hero img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.hero img:hover {
+    transform: rotate(5deg);
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #00ffae;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.hero .intro {
+    font-size: 1em;
+    margin: 20px 0;
+    max-width: 300px;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 2em;
+    margin: 0 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00ffae;
+    transform: scale(1.1);
+}
+
+#download-cv {
+    background-color: #00ffae;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+#download-cv:hover {
+    background-color: #00cc99;
+}
+
+.content {
+    flex: 2;
+    padding: 50px;
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.section:hover {
+    opacity: 0.8;
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    color: #00ffae;
+    border-bottom: 2px solid #00ffae;
+    padding-bottom: 10px;
+}
+
+.photo-boxes {
+    display: flex;
+    justify-content: space-between; /* Justified: Evenly spaced across width */
+    align-items: center; /* Centers images vertically in the row */
+    margin: 20px auto; /* Centers the container horizontally in the section */
+    max-width: 300px; /* Limits width for better centering; adjust as needed */
+}
+
+.photo-boxes img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover; /* Centers image content within the box */
+    border: 2px solid #00ffae;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.photo-boxes img:hover {
+    transform: scale(1.1);
+    border-color: #00cc99;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section li {
+    margin-bottom: 10px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, .contact textarea, .contact button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #00ffae;
+    border-radius: 4px;
+    background-color: #222;
+    color: #fff;
+}
+
+.contact button {
+    background-color: #00ffae;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #00cc99;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .hero, .content {
+        flex: none;
+        width: 100%;
+    }
+    .photo-boxes {
+        flex-wrap: wrap;
+        justify-content: center; /* Centers on mobile for better layout */
+        max-width: none;
+    }
+    .photo-boxes img {
+        margin: 5px;
+    }
+}
